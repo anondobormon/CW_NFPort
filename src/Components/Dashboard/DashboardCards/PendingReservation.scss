@@ -1,0 +1,147 @@
+.module-main {
+  .w-layout-grid {
+    display: -ms-grid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    -ms-grid-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: auto auto;
+    grid-template-rows: auto auto;
+    grid-row-gap: 16px;
+    grid-column-gap: 16px;
+
+    &.schedule-grid {
+      position: relative;
+      grid-column-gap: 0px;
+      grid-row-gap: 2px;
+      grid-template-areas: ".";
+      -ms-grid-columns: 60px 0px 1fr;
+      grid-template-columns: 60px 1fr;
+    }
+    .schedue-time {
+      height: 50px;
+      padding-right: 12px;
+      color: #b1b9c1;
+      font-size: 13px;
+      text-align: right;
+    }
+
+    .schedule-div {
+      padding: 8px 10px 10px;
+      border-left: 3px solid #c1cbd5;
+      border-radius: 5px;
+      background-color: #f4f6fa;
+      color: #223a5a;
+      font-size: 15px;
+      height: fit-content;
+
+      .columns {
+        padding-top: 10px;
+        display: flex;
+
+        .input {
+          flex: 1;
+
+          .form-2,
+          .form-3 {
+            label {
+              display: block;
+              margin-bottom: 5px;
+              color: #6f839c;
+              font-size: 15px;
+              font-weight: 400;
+              text-align: left;
+            }
+            input {
+              border: none;
+              background-color: transparent;
+              outline: none;
+              margin: 12px 0;
+              width: 100%;
+            }
+          }
+          .w-form-done,
+          .w-form-fail {
+            display: none;
+            padding: 20px;
+            text-align: center;
+            background-color: #dddddd;
+          }
+        }
+      }
+      .div-block {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        padding-right: 10px;
+        padding-left: 10px;
+        -webkit-box-pack: end;
+        -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+        text-align: center;
+        .confirm {
+          margin-right: 10px;
+          background-color: #be191b;
+          background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(rgba(236, 21, 25, 0.5)),
+            to(transparent)
+          );
+          background-image: linear-gradient(
+            180deg,
+            rgba(236, 21, 25, 0.5),
+            transparent
+          );
+          font-size: 14px;
+        }
+        .cancel {
+          margin-right: 0px;
+          margin-left: 0px;
+          background-color: #0099c2;
+          background-image: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(rgba(11, 126, 213, 0.5)),
+            to(transparent)
+          );
+          background-image: linear-gradient(
+            180deg,
+            rgba(11, 126, 213, 0.5),
+            transparent
+          );
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+  .module-main {
+    .columns {
+      flex-direction: column;
+    }
+    .div-block {
+      flex-direction: column;
+      .button {
+        width: fit-content;
+      }
+    }
+    .schedule-grid {
+      grid-template-columns: 1fr !important;
+
+      .schedue-time {
+        height: 22px;
+        text-align: left;
+        width: fit-content;
+      }
+    }
+  }
+}

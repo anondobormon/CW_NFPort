@@ -1,0 +1,170 @@
+.dashboard-main-content {
+  .dashboard-page-header {
+    .page {
+      margin-top: 4px;
+      margin-bottom: 0px;
+      padding: 8px 18px;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #dfe3eb;
+      border-radius: 5px;
+      background-color: #fff;
+      box-shadow: inset 0 -12px 15px 0 #f0f4f6, 0 2px 8px 0 rgba(0, 0, 0, 0.03);
+      color: #0a1a25;
+      font-weight: 400;
+
+      &:hover {
+        background-color: #f4f6fa;
+        box-shadow: inset 0 -12px 15px 0 #e0e5e7,
+          0 2px 8px 0 rgba(0, 0, 0, 0.03);
+      }
+    }
+  }
+
+  ._4-grid {
+    .module {
+      &.blue-border {
+        border: 1px solid #0099c2;
+      }
+
+      .module-main {
+        .module-number {
+          display: inline-block;
+          color: #0a1a25;
+          font-size: 42px;
+          line-height: 0.9em;
+          font-weight: 700;
+          &.blue {
+            color: #0099c2;
+          }
+        }
+      }
+    }
+  }
+
+  .module {
+    .module-header {
+      .module-button {
+        padding: 7px 10px;
+        border-style: solid;
+        border-width: 1px;
+        border-color: #dfe3eb;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: inset 0 -6px 12px 0 rgba(240, 244, 246, 0.6);
+        -webkit-transition: box-shadow 200ms ease, background-color 200ms ease;
+        transition: box-shadow 200ms ease, background-color 200ms ease;
+        color: #0a1a25;
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: center;
+        letter-spacing: 0.4px;
+
+        &:hover {
+          background-color: #f4f6fa;
+          box-shadow: inset 0 -12px 15px 0 #e0e5e7,
+            0 2px 8px 0 rgba(0, 0, 0, 0.03);
+        }
+      }
+    }
+
+    .module-main {
+      .email-element {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding-top: 15px;
+        padding-left: 0px;
+        border-top: 1px solid #dfe3eb;
+
+        &.simple {
+          margin-top: 0px;
+          padding-top: 0px;
+          border-top-style: none;
+        }
+        .notification-top {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          margin-bottom: 4px;
+          padding-left: 0px;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+
+          .notification-dot {
+            width: 8px;
+            height: 8px;
+            margin-right: 8px;
+            border-radius: 20px;
+            background-color: #0099c2;
+          }
+          .notificaiton-title {
+            margin-top: -1px;
+            margin-bottom: 0px;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            color: #0a1a25;
+            font-size: 18px;
+            font-weight: 700;
+          }
+
+          .email-time {
+            color: #c1cbd5;
+            font-size: 14px;
+          }
+        }
+        .notification-subtitle {
+          display: inline-block;
+          margin: 0;
+          margin-bottom: 4px;
+          color: #385074;
+          font-size: 16px;
+        }
+
+        .notification-description {
+          margin-top: 0px;
+          margin-bottom: 0px;
+          color: #6f839c;
+          font-size: 13px;
+        }
+      }
+      .empty-module-insert {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        height: 100%;
+        padding: 28px;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #c1cbd5;
+        text-align: center;
+        font-size: 14px;
+
+        .empty-icon {
+          width: 28px;
+          height: 28px;
+          margin-bottom: 5px;
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+}

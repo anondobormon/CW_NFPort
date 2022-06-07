@@ -1,0 +1,150 @@
+.dashboard-main-content {
+  .container {
+    width: 100%;
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    ._2-5-1-grid {
+      .module {
+        .tabs {
+          .module-tabs {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            padding-top: 8px;
+            padding-right: 18px;
+            padding-left: 18px;
+            -webkit-box-pack: start;
+            -webkit-justify-content: flex-start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            -ms-flex-align: center;
+            align-items: center;
+            border-bottom: 1px solid #dfe3eb;
+            color: #0a1a25;
+
+            .tab {
+              font-weight: 600;
+              font-size: 15px;
+              padding: 10px 15px;
+              cursor: pointer;
+              transition: all 0.5s;
+              border-bottom: 3px solid white;
+
+              &:hover {
+                border-bottom: 3px solid #009bc235;
+              }
+              &.active {
+                border-bottom: 3px solid #009ac2;
+              }
+            }
+          }
+
+          .module-main {
+            height: fit-content;
+            min-height: 60px;
+            padding: 22px 18px 18px;
+            color: #000;
+
+            .tab-pane {
+              position: relative;
+
+              .w-form {
+                margin: 0 0 15px;
+
+                .checkbox-element {
+                  margin-bottom: 20px;
+                  padding-left: 0px;
+
+                  .checkbox-top {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+
+                    .checkbox {
+                      display: flex;
+                      align-items: flex-start;
+
+                      input[type="checkbox" i] {
+                        display: inline-block;
+                        width: 18px;
+                        height: 18px;
+                        margin-top: 1px;
+                        margin-right: 10px;
+                        margin-left: 0px;
+                        border-color: #c1cbd5;
+                        border-radius: 4px;
+                        cursor: pointer;
+                      }
+                      input[type="checkbox" i]:checked {
+                        border-color: #245fff;
+                        background-color: #0099c2;
+                        background-position: 50% 50%;
+                        background-size: 15px;
+                      }
+
+                      .task-title {
+                        margin-top: -1px;
+                        margin-bottom: 0px;
+                        -webkit-box-flex: 1;
+                        -webkit-flex: 1;
+                        -ms-flex: 1;
+                        flex: 1;
+                        font-size: 16px;
+                        font-weight: 400;
+                        color: #0a1a25;
+                      }
+                    }
+                    .tag {
+                      display: inline-block;
+                      padding-right: 9px;
+                      padding-left: 9px;
+                      border-radius: 20px;
+                      background-color: #f4f6fa;
+                      font-size: 14px;
+                      line-height: 22px;
+
+                      &.new {
+                        background-color: #dbf6ce;
+                      }
+
+                      &.closed {
+                        background-color: #ffe4e4;
+                      }
+
+                      &.issues {
+                        background-color: #fff6b8;
+                      }
+                    }
+                  }
+
+                  .task-description {
+                    margin-top: 4px;
+                    margin-bottom: 0px;
+                    margin-left: 28px;
+                    color: #6f839c;
+                    font-size: 13px;
+                    line-height: 1.4em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+.dashboard-main-content {
+  ._2-5-1-grid {
+    .module {
+      margin: 0;
+      .module-main {
+        height: 100%;
+        min-height: 60px;
+        padding: 22px 30px 18px;
+        color: #000;
+        font-size: 16px;
+
+        .module-heading {
+          margin: 0;
+          color: #0099c2;
+          font-size: 15px;
+
+          &.large {
+            font-size: 24px;
+          }
+        }
+
+        .email-time {
+          color: #c1cbd5;
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}

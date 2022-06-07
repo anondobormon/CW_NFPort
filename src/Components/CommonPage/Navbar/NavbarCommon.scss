@@ -1,0 +1,114 @@
+.navbar-common {
+  position: sticky;
+  top: 0;
+  z-index: 111;
+  .nav-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    z-index: 200;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    height: 72px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 1px 3px 0 rgba(15, 44, 65, 0.1);
+
+    .nav-container {
+      left: 0px;
+      top: 0px;
+      right: 0px;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      width: 100%;
+      max-width: 1230px;
+      margin-right: auto;
+      margin-left: auto;
+      padding: 15px 40px;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+      flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
+
+      .logo-div {
+        display: block;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 auto;
+        -ms-flex: 0 auto;
+        flex: 0 auto;
+
+        .nav-logo {
+          -webkit-box-flex: 1;
+          -webkit-flex: 1;
+          -ms-flex: 1;
+          flex: 1;
+
+          .image-5 {
+            width: 60%;
+          }
+        }
+      }
+
+      .nav-button {
+        display: flex;
+        align-items: center;
+
+        .paragraph-small {
+          color: #6f839c;
+          font-size: 14px;
+          line-height: 1.5em;
+          font-weight: 400;
+        }
+      }
+
+      .cta {
+        margin-left: 16px;
+        padding: 7px 15px;
+        border: 1px solid #deeaff;
+        border-radius: 6px;
+        font-weight: 500;
+        font-size: 15px;
+        text-decoration: none;
+        background-color: transparent;
+        box-shadow: 0 1px 38px 0 rgb(0 0 0 / 3%);
+        color: #0099c2;
+        font-weight: 700;
+      }
+    }
+  }
+}
