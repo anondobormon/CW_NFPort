@@ -126,8 +126,6 @@ export default function Nav() {
 
                 <Link to="/compte/centre-aide">Contacter le support</Link>
                 <Link to="/contactez-nous">Signaler un problème</Link>
-                <Link to="/compte/terms">Termes et conditions</Link>
-                <Link to="/compte/politique">Politique de confidentialité</Link>
 
                 <div className="menu-divider"></div>
 

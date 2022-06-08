@@ -4,15 +4,24 @@ import Archive from "../../images/Archive.svg";
 import Check from "../../images/Check.svg";
 import CheckSquare from "../../images/CheckSquare.svg";
 import Pencil from "../../images/Pencil.svg";
+import Trush from "../../images/Trush.svg";
 import CopyWrite from "../CommonPage/CopyWrite/CopyWrite";
 import MetaData from "../Utils/MetaData";
+import AddTask from "./DashboardCards/AddTask";
 import ConfirmReservation from "./DashboardCards/ConfirmReservation";
 import PendingReservation from "./DashboardCards/PendingReservation";
+import ReservationHistory from "./DashboardCards/ReservationHistory";
 import "./Reservations.scss";
 
 export default function Reservations() {
   const [urgent, setUrgent] = useState(false);
   const [allTask, setAllTask] = useState(true);
+  const [trash, setTrash] = useState(false);
+  const [showAddTask, setShowAddTask] = useState(false);
+
+  const handleClick = () => {
+    setShowAddTask(false);
+  };
 
   return (
     <div className="dashboard-main-content">
@@ -140,7 +149,7 @@ export default function Reservations() {
           </div>
 
           <div className="action-group">
-            <div className="action-card">
+            <div onClick={() => setShowAddTask(true)} className="action-card">
               <img
                 src={Pencil}
                 loading="lazy"
@@ -150,7 +159,8 @@ export default function Reservations() {
               />
               <h3 className="module-heading">Ajouter une tâche</h3>
             </div>
-            <div className="action-card">
+
+            <div onClick={() => setTrash(!trash)} className="action-card">
               <img
                 src={CheckSquare}
                 loading="lazy"
@@ -160,11 +170,20 @@ export default function Reservations() {
               />
               <h3 className="module-heading">Tout séléctionner</h3>
             </div>
-            <Link
-              to="/"
-              href="emails.html"
-              className="action-card w-inline-block"
-            >
+            {trash && (
+              <button className="action-card delete-button">
+                <img
+                  src={Trush}
+                  loading="lazy"
+                  width="18"
+                  alt=""
+                  className="action-icon "
+                />
+                <h3 className="module-heading">Supprimed</h3>
+              </button>
+            )}
+
+            <Link to="/emails" className="action-card">
               <img
                 src={Archive}
                 loading="lazy"
@@ -182,10 +201,11 @@ export default function Reservations() {
           <h3 className="module-heading">Réservations en attente</h3>
         </div>
         <PendingReservation />
-        <PendingReservation />
-        <PendingReservation />
       </div>
+
       <ConfirmReservation />
+      <ReservationHistory />
+
       <div className="module">
         <div className="module-header">
           <h3 className="module-heading">Réservations en cours</h3>
@@ -204,6 +224,15 @@ export default function Reservations() {
         </div>
       </div>
       <CopyWrite />
+
+      {showAddTask && (
+        <div className="addTaskPopup">
+          <div className="mainContent">
+            <AddTask />
+            <div onClick={handleClick} className="hideModal"></div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

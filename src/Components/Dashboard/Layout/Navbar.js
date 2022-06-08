@@ -74,8 +74,8 @@ export default function Navbar() {
                   onClick={(e) => setNotification(false)}
                   className="close-modal"
                 ></div>
-                <div className="notification">
-                  <div className="notificaiton-element">
+                <div className="notification1">
+                  <Link to="/" className="notificaiton-elements">
                     <div className="notification-top">
                       <div className="notification-dot"></div>
                       <div className="notificaiton-title">3 notifications</div>
@@ -84,32 +84,14 @@ export default function Navbar() {
                       Vous avez 2 demandes de réservation, et 1 email en attente
                       de réponse
                     </p>
-                  </div>
-                  <div className="notificaiton-element seen">
-                    <div className="notification-top">
-                      <div className="notification-dot seen"></div>
-                      <div className="notificaiton-title">
-                        2 demandes a traiter
-                      </div>
-                    </div>
-                    <p className="notification-description">
-                      Il y a de nouvelles commandes à confirmer.
-                    </p>
-                  </div>
-                  <div className="notificaiton-element seen">
-                    <div className="notification-top">
-                      <div className="notification-dot seen"></div>
-                      <div className="notificaiton-title">
-                        1 email en attente de réponse
-                      </div>
-                    </div>
-                    <p className="notification-description">
-                      Il y a de nouveaux billets à vérifier.
-                    </p>
-                  </div>
-                  <Link to="/" className="module-button">
-                    Voir toutes les notifications
                   </Link>
+
+                  <div className="notification-bottom">
+                    <Link to="/" className="module-button">
+                      Voir toutes les notifications
+                    </Link>
+                    <button className="clear-notification">Clear All</button>
+                  </div>
                 </div>
               </div>
             )}
@@ -150,9 +132,7 @@ export default function Navbar() {
                 <div className="menu-divider"></div>
                 <Link to="/compte/centre-aide">Contacter le support</Link>
                 <Link to="/contactez-nous">Signaler un problème</Link>
-                <Link to="/compte/terms">Termes et conditions</Link>
-                <Link to="/compte/politique">Politique de confidentialité</Link>
-                <Link to="/">Numéro de licence</Link>
+                {/* <Link to="/">Numéro de licence</Link> */}
                 <div className="menu-divider"></div>
                 <Link to="/connexion">Déconnexion</Link>
               </nav>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export default function CentreCard() {
   return (
@@ -9,24 +10,24 @@ export default function CentreCard() {
       <div className="module-main">
         <ul role="list" className="link-list">
           <li>
-            <a href="../pages/aide.html" className="link">
+            <Link to="/compte/aide" className="link">
               Modifier les détails du compte
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="../pages/aide.html" className="link">
+            <Link to="/compte/aide" className="link">
               Mise à jour du mot de passe
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="../pages/aide.html" className="link">
+            <Link to="/compte/aide" className="link">
               Modifier les notifications par e-mail
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="../pages/aide.html" className="link">
+            <Link to="/compte/aide" className="link">
               Supprimer votre compte
-            </a>
+            </Link>
           </li>
         </ul>
       </div>

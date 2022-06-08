@@ -1,0 +1,33 @@
+.sendEmailPopup {
+  z-index: 111111;
+  .module {
+    padding-bottom: 15px;
+
+    .form {
+      ._2-fields {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+      }
+      .button-area {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 30px;
+        margin-top: 20px;
+
+        .cancel {
+          background-color: red;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .sendEmailPopup {
+    ._2-fields {
+      flex-direction: column;
+    }
+  }
+}

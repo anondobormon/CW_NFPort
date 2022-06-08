@@ -10,10 +10,28 @@
             justify-content: center;
             border-bottom: none;
 
-            .calender-title {
-              margin-top: 0;
-              font-size: 26px;
-              text-align: center;
+            &.calender-header {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 12px 0;
+
+              span {
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 30px;
+                font-weight: 500;
+                font-size: 28px;
+                cursor: pointer;
+              }
+
+              .calender-title {
+                font-size: 26px;
+                text-align: center;
+                margin: 0 20px;
+              }
             }
           }
 
@@ -81,6 +99,9 @@
                   border-radius: 100px;
                   font-size: 15px;
                   font-weight: 400;
+                  cursor: pointer;
+                  position: relative;
+                  transition: 0.5s;
                   // border: 1px solid red;
 
                   &.blue {
@@ -92,6 +113,23 @@
                   &.light {
                     background-color: #deeaff;
                   }
+                  &.grey {
+                    color: rgb(172, 172, 172);
+                  }
+                }
+                .calender-number[title]:hover::after {
+                  content: attr(title);
+                  position: absolute;
+                  display: inline block;
+                  z-index: 111;
+                  top: 40px;
+                  left: 40px;
+                  width: fit-content;
+                  padding: 5px 4px;
+                  border-radius: 5px;
+                  background-color: #dfe3eb;
+                  min-height: fit-content;
+                  color: #000;
                 }
               }
             }

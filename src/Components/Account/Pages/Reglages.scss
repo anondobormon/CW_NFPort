@@ -141,11 +141,14 @@
               flex-direction: column;
               height: fit-content;
               background-color: rgb(255, 255, 255);
+              padding: 0;
 
               .filter-option {
                 padding: 8px;
                 text-decoration: none;
                 color: #0099c2;
+                list-style: none;
+                cursor: pointer;
 
                 &:hover {
                   background-color: #f4f6fa;
@@ -210,6 +213,41 @@
     #checkbox {
       display: none;
     }
+  }
+
+  .checkbox-toggle {
+    display: inline-block;
+    width: 36px;
+    height: 16px;
+    margin-top: 1px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-color: #c1cbd5;
+    border-radius: 20px;
+    background-image: url(../../../images/Ellipse-2.svg);
+    background-position: 2px 2px;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    border: 1px solid #c1cbd5;
+    box-shadow: 0px 0px 3px 1px #3898ec;
+  }
+  .checkbox-checked-toggle {
+    display: inline-block;
+    width: 38px;
+    height: 17px;
+    margin-top: 1px;
+    margin-right: 0px;
+    margin-left: 0px;
+    border-color: #245fff;
+    background-color: #0099c2;
+    background-image: url(../../../images/White-Circle.svg);
+    background-repeat: no-repeat;
+    border-radius: 20px;
+    background-position: 90% 3px;
+    background-size: 12px 12px;
+    box-shadow: 0px 0px 3px 1px #3898ec;
+    cursor: pointer;
   }
 }
 

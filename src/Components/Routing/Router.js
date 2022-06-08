@@ -4,9 +4,7 @@ import AccountLayout from "../Account/AccountLayout";
 import CentreAide from "../Account/Pages/CentreAide";
 import Aide from "../Account/Pages/CentreAide/Aide";
 import Compte from "../Account/Pages/Compte";
-import Politique from "../Account/Pages/Politique";
 import Reglages from "../Account/Pages/Reglages";
-import TermsAndConditions from "../Account/Pages/TermsAndConditions";
 import Bienvenue from "../CommonPage/Bienvenue/Bienvenue";
 import Connexion from "../CommonPage/Connexion/Connexion";
 import ContactezNous from "../CommonPage/ContactezNous/ContactezNous";
@@ -20,7 +18,6 @@ import Email from "../Dashboard/Email";
 import EmailDetails from "../Dashboard/EmailDetails/EmailDetails";
 import DashboardLayout from "../Dashboard/Layout/DashboardLayout";
 import Reservations from "../Dashboard/Reservations";
-import Support from "../Dashboard/Support";
 import NotFound from "../ErrorPages/NotFound";
 import UnAuthorize from "../ErrorPages/UnAuthorize";
 
@@ -35,7 +32,7 @@ export default function Router() {
           <Route path="/email-details" element={<EmailDetails />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/clients" element={<Clients />} />
-          <Route path="/support" element={<Support />} />
+          {/* <Route path="/support" element={<Support />} /> */}
           <Route path="/customer-details" element={<CustomerDetails />} />
         </Route>
         <Route path="/compte" element={<AccountLayout />}>
@@ -43,8 +40,6 @@ export default function Router() {
           <Route path="centre-aide" element={<CentreAide />} />
           <Route path="aide" element={<Aide />} />
           <Route path="reglages" element={<Reglages />} />
-          <Route path="terms" element={<TermsAndConditions />} />
-          <Route path="politique" element={<Politique />} />
         </Route>
         <Route path="/contactez-nous" element={<ContactezNous />} />
         <Route path="/plans" element={<Plan />} />

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import CalendarBlank from "../../../images/CalendarBlank.svg";
 import EnvelopeOpen from "../../../images/EnvelopeOpen.svg";
 import Note from "../../../images/Note.svg";
 import "./Task.scss";
@@ -22,8 +21,8 @@ export default function Task() {
           </div>
         </div>
         {task && (
-          <nav className="add-menu">
-            <a href="reservations.html" className="add-link">
+          <div className="add-menu">
+            <p className="add-link">
               <img
                 src={Note}
                 loading="lazy"
@@ -32,8 +31,8 @@ export default function Task() {
                 className="sidebar-icon"
               />
               <div className="sidebar-link-text">Nouvelle tâche</div>
-            </a>
-            <a href="reservations.html" className="add-link w-inline-block">
+            </p>
+            <p className="add-link w-inline-block">
               <img
                 src={EnvelopeOpen}
                 loading="lazy"
@@ -42,18 +41,8 @@ export default function Task() {
                 className="sidebar-icon"
               />
               <div className="sidebar-link-text">Nouvel email</div>
-            </a>
-            <a href="reservations.html" className="add-link w-inline-block">
-              <img
-                src={CalendarBlank}
-                loading="lazy"
-                width="27"
-                alt=""
-                className="sidebar-icon"
-              />
-              <div className="sidebar-link-text">Nouvel event</div>
-            </a>
-          </nav>
+            </p>
+          </div>
         )}
       </div>
     </div>

@@ -3,6 +3,184 @@ import CopyWrite from "../CommonPage/CopyWrite/CopyWrite";
 import MetaData from "../Utils/MetaData";
 import "./Calendar.scss";
 
+const fakeData = [
+  {
+    date: 31,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 1,
+    class: "light",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 2,
+    class: "blue",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 3,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 4,
+    class: "light",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 5,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 6,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 7,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 8,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 9,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 10,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 11,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 12,
+    class: "light",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 13,
+    class: "light",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 14,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 15,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 16,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 17,
+    class: "blue",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 18,
+    class: "light",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 19,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 20,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 21,
+    class: "light",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 22,
+    class: "blue",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 23,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 24,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 25,
+    class: "light",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 26,
+    class: "",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 27,
+    class: "blue",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 28,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 1,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 2,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 3,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 4,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 5,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+  {
+    date: 6,
+    class: "grey",
+    title: "Nombre de réservations:10",
+  },
+];
+
 export default function Calendar() {
   return (
     <div className="calendar-main">
@@ -11,16 +189,15 @@ export default function Calendar() {
       <div className="dashboard-main-content">
         <div className="dashboard-page-header">
           <h2>Calendar</h2>
-          <a href="#" className="button page w-button">
-            Ajouter un nouvel évènement
-          </a>
         </div>
         <div className="container">
           <div className="module">
             <div className="calender">
               <div className="calender-month">
-                <div className="module-header">
+                <div className="module-header calender-header">
+                  <span>&#10094;</span>
                   <h3 className="calender-title">Juin 2022</h3>
+                  <span>&#10095;</span>
                 </div>
                 <div className="module-main">
                   <div className="calender-row head">
@@ -33,111 +210,16 @@ export default function Calendar() {
                     <h4 className="grid-header">Sat</h4>
                   </div>
                   <div className="calender-row">
-                    <div className="calender-square grey">
-                      <div className="calender-number">31</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number light">1</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number blue">2</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">3</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number light">4</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">5</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">6</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">7</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">8</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">9</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">10</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">11</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number light">12</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number light">13</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">14</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">15</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">16</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number blue">17</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number light">18</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">19</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">20</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number light">21</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number blue">22</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">23</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">24</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number light">25</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">26</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number blue">27</div>
-                    </div>
-                    <div className="calender-square">
-                      <div className="calender-number">28</div>
-                    </div>
-                    <div className="calender-square grey">
-                      <div className="calender-number">1</div>
-                    </div>
-                    <div className="calender-square grey">
-                      <div className="calender-number">2</div>
-                    </div>
-                    <div className="calender-square grey">
-                      <div className="calender-number">3</div>
-                    </div>
-                    <div className="calender-square grey">
-                      <div className="calender-number">4</div>
-                    </div>
-                    <div className="calender-square grey">
-                      <div className="calender-number">5</div>
-                    </div>
-                    <div className="calender-square grey">
-                      <div className="calender-number">6</div>
-                    </div>
+                    {fakeData.map((item, index) => (
+                      <div key={index} className={`calender-square `}>
+                        <div
+                          title={item.title}
+                          className={`calender-number ${item.class}`}
+                        >
+                          {item.date}
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>

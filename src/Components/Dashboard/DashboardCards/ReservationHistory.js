@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import CaretDown from "../../../images/CaretDown.svg";
 import "./ConfirmReservation.scss";
 
-export default function ConfirmReservation() {
+export default function ReservationHistory() {
   const [dropdown, setDropDown] = useState(false);
   return (
     <div>
       <div className="module">
         <div className="module-header">
-          <h3 className="module-heading">Réservations confirmées</h3>
+          <h3 className="module-heading">Historique de réservations</h3>
           <div className="module-filters">
             <div className="module-dropdown w-dropdown">
               <div
