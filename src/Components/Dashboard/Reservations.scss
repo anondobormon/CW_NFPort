@@ -68,6 +68,14 @@
                 .checkbox-element {
                   margin-bottom: 20px;
                   padding-left: 0px;
+                  transition: all 1s;
+
+                  &.hide {
+                    opacity: 0;
+                  }
+                  &.none {
+                    display: none;
+                  }
 
                   .checkbox-top {
                     display: flex;
