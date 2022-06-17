@@ -69,6 +69,16 @@ export default function Sidebar({ show }) {
             <img src={Users} alt="" className="sidebar-icon" />
             <div className="sidebar-link-text">Clients</div>
           </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              `sidebar-link ${isActive && " w--current"} `
+            }
+            to="/messagerie"
+          >
+            <img src={EnvelopeOpen} alt="" className="sidebar-icon" />
+            <div className="sidebar-link-text">Messagerie</div>
+          </NavLink>
         </div>
 
         {/* <div className="sidebar-menu-section bottom-divider">

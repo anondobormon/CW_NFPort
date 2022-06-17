@@ -1,0 +1,70 @@
+.messagerie {
+  .dashboard-page-header {
+    width: 100%;
+    max-width: 2000px;
+  }
+  .search {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    height: 34px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-bottom: 50px;
+
+    &:hover {
+      border-color: #f4f6fa;
+    }
+    &:active {
+      border-color: #dfe3eb;
+    }
+
+    .search-button {
+      width: 30px;
+      height: 30px;
+      background-color: transparent;
+      background-image: url(../../images/MagnifyingGlass2.svg);
+      background-position: 50% 50%;
+      background-size: 16px 16px;
+      background-repeat: no-repeat;
+      opacity: 0.51;
+      color: transparent;
+      border: none;
+    }
+
+    .search-input {
+      width: 100%;
+      border-radius: 20px;
+      padding-left: 20px;
+      background: #fff;
+      border: none;
+      height: 32px;
+
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .dashboard-page-contents {
+    margin-left: 0;
+
+    .module-main {
+      padding: 10px 20px;
+
+      .notificaiton-title {
+        color: #0a1a25 !important;
+        font-weight: 400 !important;
+      }
+      .module-button {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

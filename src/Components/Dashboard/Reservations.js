@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Archive from "../../images/Archive.svg";
 import Check from "../../images/Check.svg";
@@ -206,6 +206,7 @@ export default function Reservations() {
           </div>
         </div>
       </div>
+
       <div className="module">
         <div className="module-header">
           <h3 className="module-heading">Réservations en attente</h3>

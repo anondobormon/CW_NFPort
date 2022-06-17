@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import AccountLayout from "../Account/AccountLayout";
 import CentreAide from "../Account/Pages/CentreAide";
@@ -17,6 +16,8 @@ import Dashboard from "../Dashboard/Dashboard";
 import Email from "../Dashboard/Email";
 import EmailDetails from "../Dashboard/EmailDetails/EmailDetails";
 import DashboardLayout from "../Dashboard/Layout/DashboardLayout";
+import Message from "../Dashboard/Message";
+import Messagerie from "../Dashboard/Messagerie";
 import Reservations from "../Dashboard/Reservations";
 import NotFound from "../ErrorPages/NotFound";
 import UnAuthorize from "../ErrorPages/UnAuthorize";
@@ -32,6 +33,8 @@ export default function Router() {
           <Route path="/email-details" element={<EmailDetails />} />
           <Route path="/calendar" element={<Calendar />} />
           <Route path="/clients" element={<Clients />} />
+          <Route path="/messagerie" element={<Messagerie />} />
+          <Route path="/message" element={<Message />} />
           {/* <Route path="/support" element={<Support />} /> */}
           <Route path="/customer-details" element={<CustomerDetails />} />
         </Route>
