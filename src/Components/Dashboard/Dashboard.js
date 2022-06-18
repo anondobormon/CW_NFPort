@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import Check from "../../images/Check.svg";
 import CopyWrite from "../CommonPage/CopyWrite/CopyWrite";
 import MetaData from "../Utils/MetaData";
@@ -6,6 +6,7 @@ import "./Dashboard.scss";
 import ConfirmReservation from "./DashboardCards/ConfirmReservation";
 import PendingReservation from "./DashboardCards/PendingReservation";
 import ReservationCard from "./DashboardCards/ReservationCard";
+import ReservationHistory from "./DashboardCards/ReservationHistory";
 
 const resFakeData = [
   {
@@ -27,6 +28,19 @@ const resFakeData = [
     title: "Demandes de contacts    ",
     count: 8,
     border: "",
+  },
+];
+
+const reservationData = [
+  {
+    name: "John Smith",
+    registration: "4574165474",
+    boatWidth: 45,
+    boatLength: 100,
+    boatName: "Sea Ship",
+    amount: 500,
+    duration: 5,
+    time: "09h00",
   },
 ];
 
@@ -53,19 +67,22 @@ export default function Dashboard() {
             <div className="module-header">
               <h3 className="module-heading">Réservations en attente</h3>
             </div>
-            <PendingReservation />
+
+            {reservationData.map((item, index) => (
+              <PendingReservation key={index} item={item} />
+            ))}
           </div>
 
           <div className="module">
             <div className="module-header">
               <h3 className="module-heading">Demandes de contacts</h3>
-              <a href="emails.html" className="module-button">
+              <Link to="/" className="module-button">
                 Tout voir
-              </a>
+              </Link>
             </div>
             <div className="module-main">
               <div>
-                <a href="email-detail.html" className="email-element simple">
+                <Link to="/" className="email-element simple">
                   <div className="notification-top">
                     <div className="notification-dot"></div>
                     <div className="notificaiton-title">
@@ -77,14 +94,14 @@ export default function Dashboard() {
                   <p className="notification-description">
                     Demande de réservation du 16 avril au 1 juin
                   </p>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
 
-        <ConfirmReservation />
-        <ConfirmReservation />
+        <ConfirmReservation reservationData={reservationData} />
+        <ReservationHistory reservationData={reservationData} />
 
         <div className="module">
           <div className="module-header">

@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import ReactDOM from "react-dom";
 import { Link } from "react-router-dom";
 import CaretDown from "../../../images/CaretDown.svg";
 import CopyWrite from "../../CommonPage/CopyWrite/CopyWrite";
@@ -27,16 +28,23 @@ const fakeData = [
 export default function Reglages() {
   const [language, setLanguages] = useState(false);
   const [pays, setPays] = useState(false);
-  const [checked, setChecked] = useState(false);
   const [journalier, setJournalier] = useState(false);
+  const [hebdomadaire, setHebdomadaire] = useState(false);
   const [notification, setNotification] = useState(false);
-
-  const handleChange = (e) => {
-    setChecked(e.target.checked);
-  };
+  const [current, setCurrent] = useState("profile");
 
   const handleNotification = (e) => {
     setNotification(e.target.checked);
+  };
+
+  const handleCheckbox = (e) => {
+    if (e.target.checked) {
+      ReactDOM.findDOMNode(e.target).parentNode.children[0].className =
+        "checkbox checked";
+    } else {
+      ReactDOM.findDOMNode(e.target).parentNode.children[0].className =
+        "checkbox ";
+    }
   };
 
   return (
@@ -53,17 +61,41 @@ export default function Reglages() {
         <div className="_1-2-5-grid">
           <div className="reglages-module sticky">
             <div className="menu-list">
-              <a href="#Edit-Profile">
-                <div className="w--current item ">Paramètres du compte</div>
+              <a onClick={() => setCurrent("profile")} href="#Edit-Profile">
+                <div
+                  className={` item ${current === "profile" && "w--current"}`}
+                >
+                  Paramètres du compte
+                </div>
               </a>
-              <a href="#Password">
-                <div className="item">Mot de passe</div>
+              <a onClick={() => setCurrent("password")} href="#Password">
+                <div
+                  className={` item ${current === "password" && "w--current"}`}
+                >
+                  Mot de passe
+                </div>
               </a>
-              <a href="#Email-Notifications">
-                <div className="item">Email Notifications</div>
+              <a
+                onClick={() => setCurrent("notifications")}
+                href="#Email-Notifications"
+              >
+                <div
+                  className={` item ${
+                    current === "notifications" && "w--current"
+                  }`}
+                >
+                  Email Notifications
+                </div>
               </a>
-              <a href="#Desktop-Notifications">
-                <div className="item">Notifications du bureau</div>
+              <a
+                onClick={() => setCurrent("bureau")}
+                href="#Desktop-Notifications"
+              >
+                <div
+                  className={` item ${current === "bureau" && "w--current"}`}
+                >
+                  Notifications du bureau
+                </div>
               </a>
             </div>
           </div>
@@ -168,7 +200,11 @@ export default function Reglages() {
                         id="field"
                       />
                     </div>
-                    <input value="Confirmer" className="button settings" />
+                    <input
+                      type="submit"
+                      value="Confirmer"
+                      className="button settings"
+                    />
                   </form>
                 </div>
               </div>
@@ -181,17 +217,15 @@ export default function Reglages() {
               <div className="module-main">
                 <form className="form">
                   <label className="checkbox-element">
-                    <div className={`checkbox ${checked && "checked"}`}>
-                      {checked && (
-                        <img
-                          src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
-                          alt=""
-                        />
-                      )}
+                    <div className={`checkbox`}>
+                      <img
+                        src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
+                        alt=""
+                      />
                     </div>
                     <input
                       type="checkbox"
-                      onChange={handleChange}
+                      onChange={(e) => handleCheckbox(e)}
                       id="checkbox"
                     />
                     <span className="w-form-label">
@@ -200,17 +234,15 @@ export default function Reglages() {
                     </span>
                   </label>
                   <label className="checkbox-element">
-                    <div className={`checkbox ${checked && "checked"}`}>
-                      {checked && (
-                        <img
-                          src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
-                          alt=""
-                        />
-                      )}
+                    <div className={`checkbox`}>
+                      <img
+                        src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
+                        alt=""
+                      />
                     </div>
                     <input
                       type="checkbox"
-                      onChange={handleChange}
+                      onChange={(e) => handleCheckbox(e)}
                       id="checkbox"
                     />
                     <span className="w-form-label">
@@ -218,17 +250,15 @@ export default function Reglages() {
                     </span>
                   </label>
                   <label className="checkbox-element">
-                    <div className={`checkbox ${checked && "checked"}`}>
-                      {checked && (
-                        <img
-                          src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
-                          alt=""
-                        />
-                      )}
+                    <div className={`checkbox`}>
+                      <img
+                        src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
+                        alt=""
+                      />
                     </div>
                     <input
                       type="checkbox"
-                      onChange={handleChange}
+                      onChange={(e) => handleCheckbox(e)}
                       id="checkbox"
                     />
                     <span className="w-form-label">
@@ -237,17 +267,15 @@ export default function Reglages() {
                     </span>
                   </label>
                   <label className="checkbox-element">
-                    <div className={`checkbox ${checked && "checked"}`}>
-                      {checked && (
-                        <img
-                          src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
-                          alt=""
-                        />
-                      )}
+                    <div className={`checkbox`}>
+                      <img
+                        src="https://d3e54v103j8qbb.cloudfront.net/static/custom-checkbox-checkmark.589d534424.svg"
+                        alt=""
+                      />
                     </div>
                     <input
                       type="checkbox"
-                      onChange={handleChange}
+                      onChange={(e) => handleCheckbox(e)}
                       id="checkbox"
                     />
                     <span className="w-form-label">
@@ -274,7 +302,7 @@ export default function Reglages() {
                     className="account-dropdown w-dropdown"
                   >
                     <div
-                      onClick={() => setJournalier(!journalier)}
+                      onClick={() => setHebdomadaire(!hebdomadaire)}
                       className="settings-dropdown-toggle"
                     >
                       <div>Hebdomadaire</div>
@@ -282,7 +310,7 @@ export default function Reglages() {
                         <img src={CaretDown} alt="" />
                       </div>
                     </div>
-                    {journalier && (
+                    {hebdomadaire && (
                       <div className="filter-dropdown">
                         {fakeData.map((item, index) => (
                           <Link

@@ -47,6 +47,19 @@ const fakeTask = [
   },
 ];
 
+const reservationData = [
+  {
+    name: "John Smith",
+    registration: "4574165474",
+    boatWidth: 45,
+    boatLength: 100,
+    boatName: "Sea Ship",
+    amount: 500,
+    duration: 5,
+    time: "09h00",
+  },
+];
+
 export default function Reservations() {
   const [urgent, setUrgent] = useState(false);
   const [allTask, setAllTask] = useState(true);
@@ -211,11 +224,13 @@ export default function Reservations() {
         <div className="module-header">
           <h3 className="module-heading">Réservations en attente</h3>
         </div>
-        <PendingReservation />
+        {reservationData.map((item, index) => (
+          <PendingReservation key={index} item={item} />
+        ))}
       </div>
 
-      <ConfirmReservation />
-      <ReservationHistory />
+      <ConfirmReservation reservationData={reservationData} />
+      <ReservationHistory reservationData={reservationData} />
 
       <div className="module">
         <div className="module-header">

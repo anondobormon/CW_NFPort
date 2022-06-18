@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./AddTask.scss";
 
 export default function AddTask() {
@@ -52,7 +52,7 @@ export default function AddTask() {
               <span className="form-label">Urgent</span>
             </label>
 
-            <input value="Confirmer" className="button" />
+            <input value="Confirmer" type="submit" className="button" />
           </form>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import React from "react";
 import MagnifyingGlass from "../../../images/MagnifyingGlass2.svg";
 import CopyWrite from "../../CommonPage/CopyWrite/CopyWrite";
 import MetaData from "../../Utils/MetaData";
@@ -125,7 +124,6 @@ export default function CentreAide() {
                   <input
                     type="submit"
                     value="Envoyer"
-                    data-wait="Veuillez patienter ..."
                     className="button w-button"
                   />
                 </form>

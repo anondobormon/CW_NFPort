@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Informations() {
   return (
     <div className="modules">
@@ -113,7 +111,6 @@ export default function Informations() {
             <input
               type="submit"
               value="Mettre à jour le profil"
-              data-wait="Veuillez patienter ..."
               className="button settings"
             />
           </form>

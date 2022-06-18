@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import CaretDown from "../../../images/CaretDown.svg";
 import "./ConfirmReservation.scss";
 
-export default function ConfirmReservation() {
+export default function ConfirmReservation({ reservationData }) {
   const [dropdown, setDropDown] = useState(false);
   return (
     <div>
@@ -36,65 +36,106 @@ export default function ConfirmReservation() {
             </div>
           </div>
         </div>
-        <div className="module-main">
-          <div className="w-layout-grid schedule-grid">
-            <div className="schedue-time">
-              <div>08h00</div>
-            </div>
-            <div className="schedule-div current">
-              <div className="columns w-row">
-                <div className="input booking _1 w-col w-col-6">
-                  <div>
+
+        {reservationData.map((item, index) => (
+          <div key={index} className="module-main">
+            <div className="w-layout-grid schedule-grid">
+              <div className="schedue-time">
+                <div>{item.time}</div>
+              </div>
+              <div className="schedule-div current">
+                <div className="columns w-row">
+                  <div className="input booking _1 w-col w-col-6">
+                    <div>
+                      <div className="w-form">
+                        <form className="form-2">
+                          <label>Nom du client</label>
+                          <input
+                            type="text"
+                            maxLength="256"
+                            name="client_name-2"
+                            placeholder=""
+                            id="client_name-2"
+                            value={item.name}
+                          />
+                          <label>Largeur du bateau</label>
+                          <input
+                            type="text"
+                            maxLength="256"
+                            name="boat_width-2"
+                            placeholder=""
+                            id="boat_width-2"
+                            required=""
+                            value={item.boatWidth}
+                          />
+                          <label>Nom du bateau</label>
+                          <input
+                            type="text"
+                            maxLength="256"
+                            name="boat_name-2"
+                            placeholder=""
+                            id="boat_name-2"
+                            required=""
+                            value={item.boatName}
+                          />
+                          <label>Durée</label>
+                          <input
+                            type="text"
+                            maxLength="256"
+                            name="boat_name-2"
+                            placeholder=""
+                            id="boat_name-2"
+                            required=""
+                            value={item.duration}
+                          />
+                        </form>
+                        <div className="w-form-done">
+                          <div>Merci ! Votre demande a été reçue !</div>
+                        </div>
+                        <div className="w-form-fail">
+                          <div>
+                            Oups ! Un problème est survenu lors de l&#x27;envoi
+                            du formulaire.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="input booking _2 w-col w-col-6">
                     <div className="w-form">
-                      <form
-                        id="email-form-2"
-                        name="email-form-2"
-                        data-name="Email Form 2"
-                        method="get"
-                        className="form-2"
-                      >
-                        <label>Nom du client</label>
+                      <form className="form-3">
+                        <label>Immatriculation</label>
                         <input
                           type="text"
-                          className="client_name w-input"
+                          className="boat_matriculation w-input"
                           maxLength="256"
-                          name="client_name-2"
-                          data-name="Client Name 2"
+                          name="boat_matriculation-2"
+                          data-name="Boat Matriculation 2"
                           placeholder=""
-                          id="client_name-2"
+                          id="boat_matriculation-2"
+                          value={item.registration}
                         />
-                        <label>Largeur du bateau</label>
+                        <label>Longueur du bateau</label>
                         <input
                           type="text"
-                          className="boat_width w-input"
+                          className="boath_length w-input"
                           maxLength="256"
-                          name="boat_width-2"
-                          data-name="Boat Width 2"
+                          name="boat_length-2"
+                          data-name="Boat Length 2"
                           placeholder=""
-                          id="boat_width-2"
-                          required=""
+                          value={item.boatLength}
+                          id="boat_length-2"
                         />
-                        <label>Nom du bateau</label>
+                        <label>Montant (€)</label>
                         <input
                           type="text"
-                          className="boat_name w-input"
+                          className="price w-input"
                           maxLength="256"
-                          name="boat_name-2"
-                          data-name="Boat Name 2"
+                          name="payment_status-2"
+                          data-name="Payment Status 2"
                           placeholder=""
-                          id="boat_name-2"
-                          required=""
-                        />
-                        <label>Durée</label>
-                        <input
-                          type="text"
-                          className="duration w-input"
-                          maxLength="256"
-                          name="boat_name-2"
-                          data-name="Boat Name 2"
-                          placeholder=""
-                          id="boat_name-2"
-                          required=""
+                          id="payment_status-2"
+                          value={item.amount}
                         />
                       </form>
                       <div className="w-form-done">
@@ -109,61 +150,10 @@ export default function ConfirmReservation() {
                     </div>
                   </div>
                 </div>
-                <div className="input booking _2 w-col w-col-6">
-                  <div className="w-form">
-                    <form
-                      id="email-form-2"
-                      name="email-form-2"
-                      data-name="Email Form 2"
-                      method="get"
-                      className="form-3"
-                    >
-                      <label>Immatriculation</label>
-                      <input
-                        type="text"
-                        className="boat_matriculation w-input"
-                        maxLength="256"
-                        name="boat_matriculation-2"
-                        data-name="Boat Matriculation 2"
-                        placeholder=""
-                        id="boat_matriculation-2"
-                      />
-                      <label>Longueur du bateau</label>
-                      <input
-                        type="text"
-                        className="boath_length w-input"
-                        maxLength="256"
-                        name="boat_length-2"
-                        data-name="Boat Length 2"
-                        placeholder=""
-                        id="boat_length-2"
-                      />
-                      <label>Montant (€)</label>
-                      <input
-                        type="text"
-                        className="price w-input"
-                        maxLength="256"
-                        name="payment_status-2"
-                        data-name="Payment Status 2"
-                        placeholder=""
-                        id="payment_status-2"
-                      />
-                    </form>
-                    <div className="w-form-done">
-                      <div>Merci ! Votre demande a été reçue !</div>
-                    </div>
-                    <div className="w-form-fail">
-                      <div>
-                        Oups ! Un problème est survenu lors de l&#x27;envoi du
-                        formulaire.
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   );

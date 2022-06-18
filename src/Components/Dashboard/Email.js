@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Trush from "../../images/Trush.svg";
 import CopyWrite from "../CommonPage/CopyWrite/CopyWrite";
 import MetaData from "../Utils/MetaData";
 import SendEmail from "./DashboardCards/SendEmail";
 import "./Email.scss";
+
+const fakeEmail = [
+  {
+    emailTime: "14h45",
+    emailTitle: "Demande de réservation",
+    emailSubTitle: "Zodiac Medline III",
+    notification: " Demande de réservation du 16 avril au 1 juin",
+  },
+];
 
 export default function Email() {
   const [showSendEmail, setShowSendEmail] = useState(false);
@@ -30,28 +39,31 @@ export default function Email() {
               <div className="email-section">
                 <h3 className="module-heading">Aujourd'hui</h3>
               </div>
+
               <div className="module-main">
-                <div className="email-element">
-                  <div className="notification-top">
-                    <div className="notification-dot"></div>
-                    <Link to="/email-details" className="notificaiton-title">
-                      Demande de réservation
-                    </Link>
-                    <div className="email-time">14h45</div>
-                    <div className="trash-icon">
-                      <img width="18" src={Trush} alt="" />
+                {fakeEmail.map((item, index) => (
+                  <div key={index} className="email-element">
+                    <div className="notification-top">
+                      <div className="notification-dot"></div>
+                      <Link to="/email-details" className="notificaiton-title">
+                        {item.emailTitle}
+                      </Link>
+                      <div className="email-time">{item.emailTime}</div>
+                      <div className="trash-icon">
+                        <img width="18" src={Trush} alt="" />
+                      </div>
                     </div>
+                    <p className="notification-subtitle">
+                      {item.emailSubTitle}
+                    </p>
+                    <p className="notification-description">
+                      {item.notification}
+                    </p>
                   </div>
-                  <p className="notification-subtitle">Zodiac Medline III</p>
-                  <p className="notification-description">
-                    Demande de réservation du 16 avril au 1 juin
-                  </p>
-                </div>
+                ))}
               </div>
 
-              <button className="module-button">
-                Charger plus d&#x27;emails
-              </button>
+              <button className="module-button">Charger plus d'emails</button>
             </div>
           </div>
         </div>
