@@ -1,8 +1,24 @@
-import React from "react";
 import CopyWrite from "../CommonPage/CopyWrite/CopyWrite";
 import MetaData from "../Utils/MetaData";
 import Slider from "./Layout/MessageSlider/Slider";
 import "./Messagerie.scss";
+
+const messageFakeData = [
+  {
+    name: "Aujourd'hui",
+    title: "Marc - Demande de réservation",
+    subTitle: "Zodiac Medline III",
+    description: "Demande de réservation du 16 avril au 1 juin",
+    time: "14h45",
+  },
+  {
+    name: "Hier",
+    title: "Jean pierre - Demande de réservation",
+    subTitle: "Zodiac Medline III",
+    description: "Demande de réservation du 16 avril au 1 juin",
+    time: "14h45",
+  },
+];
 
 export default function Messagerie() {
   return (
@@ -38,56 +54,32 @@ export default function Messagerie() {
         <div className="dashboard-page-contents">
           <div className="module">
             <div className="module-main">
-              <div className="email-section">
-                <h3 className="module-heading">Aujourd'hui</h3>
-                <div className="module-main">
-                  <div>
-                    <a
-                      href="email-detail.html"
-                      className="email-element simple w-inline-block"
-                    >
-                      <div className="notification-top special">
-                        <div className="notification-dot"></div>
-                        <div className="notificaiton-title">
-                          Marc - Demande de réservation
+              {messageFakeData.map((item, index) => (
+                <div key={index} className="email-section">
+                  <h3 className="module-heading">{item.name}</h3>
+                  <div className="module-main">
+                    <div>
+                      <a
+                        href="email-detail.html"
+                        className="email-element simple w-inline-block"
+                      >
+                        <div className="notification-top special">
+                          <div className="notification-dot"></div>
+                          <div className="notificaiton-title">{item.title}</div>
+                          <div className="email-time">{item.time}</div>
                         </div>
-                        <div className="email-time">14h45</div>
-                      </div>
-                      <p className="notification-subtitle special">
-                        Zodiac Medline III
-                      </p>
-                      <p className="notification-description">
-                        Demande de réservation du 16 avril au 1 juin
-                      </p>
-                    </a>
+                        <p className="notification-subtitle special">
+                          {item.subTitle}
+                        </p>
+                        <p className="notification-description">
+                          {item.description}
+                        </p>
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="email-section">
-                <h3 className="module-heading">Hier</h3>
-                <div className="module-main">
-                  <div>
-                    <a
-                      href="email-detail.html"
-                      className="email-element simple w-inline-block"
-                    >
-                      <div className="notification-top spc">
-                        <div className="notification-dot"></div>
-                        <div className="notificaiton-title">
-                          Jean pierre - Demande de réservation
-                        </div>
-                        <div className="email-time">14h45</div>
-                      </div>
-                      <p className="notification-subtitle spcial">
-                        Zodiac Medline III
-                      </p>
-                      <p className="notification-description">
-                        Demande de réservation du 16 avril au 1 juin
-                      </p>
-                    </a>
-                  </div>
-                </div>
-              </div>
+              ))}
+
               <button className="module-button">
                 Charger plus de messages
               </button>

@@ -44,6 +44,21 @@ const reservationData = [
   },
 ];
 
+const notificationFakeData = [
+  {
+    title: "Demande de réservation",
+    subTitle: "Zodiac Medline III",
+    description: "Demande de réservation du 16 avril au 1 juin",
+    time: "14h45",
+  },
+  {
+    title: "Demande de réservation",
+    subTitle: "Zodiac Medline III",
+    description: "Demande de réservation du 16 avril au 1 juin",
+    time: "14h45",
+  },
+];
+
 export default function Dashboard() {
   return (
     <div>
@@ -82,19 +97,20 @@ export default function Dashboard() {
             </div>
             <div className="module-main">
               <div>
-                <Link to="/" className="email-element simple">
-                  <div className="notification-top">
-                    <div className="notification-dot"></div>
-                    <div className="notificaiton-title">
-                      Demande de réservation
-                    </div>
-                    <div className="email-time">14h45</div>
-                  </div>
-                  <p className="notification-subtitle">Zodiac Medline III</p>
-                  <p className="notification-description">
-                    Demande de réservation du 16 avril au 1 juin
-                  </p>
-                </Link>
+                {notificationFakeData &&
+                  notificationFakeData.map((item, index) => (
+                    <Link key={index} to="/" className="email-element simple">
+                      <div className="notification-top">
+                        <div className="notification-dot"></div>
+                        <div className="notificaiton-title">{item.title}</div>
+                        <div className="email-time">{item.time}</div>
+                      </div>
+                      <p className="notification-subtitle"> {item.subTitle}</p>
+                      <p className="notification-description">
+                        {item.description}
+                      </p>
+                    </Link>
+                  ))}
               </div>
             </div>
           </div>

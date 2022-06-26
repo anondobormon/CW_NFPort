@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import Bell from "../../../images/Bell.svg";
 import CaretDown from "../../../images/CaretDown.svg";
@@ -6,6 +6,19 @@ import Ellipse from "../../../images/Ellipse-196.png";
 import Menu from "../../../images/Menu.svg";
 import "./Navbar.scss";
 import Sidebar from "./Sidebar";
+
+const notificationFakeData = [
+  {
+    title: "3 notifications",
+    description:
+      "Vous avez 2 demandes de réservation, et 1 email en attente de réponse",
+  },
+  {
+    title: "3 notifications",
+    description:
+      "Vous avez 2 demandes de réservation, et 1 email en attente de réponse",
+  },
+];
 
 export default function Navbar() {
   const [notification, setNotification] = useState(false);
@@ -75,16 +88,17 @@ export default function Navbar() {
                   className="close-modal"
                 ></div>
                 <div className="notification1">
-                  <Link to="/" className="notificaiton-elements">
-                    <div className="notification-top">
-                      <div className="notification-dot"></div>
-                      <div className="notificaiton-title">3 notifications</div>
-                    </div>
-                    <p className="notification-description">
-                      Vous avez 2 demandes de réservation, et 1 email en attente
-                      de réponse
-                    </p>
-                  </Link>
+                  {notificationFakeData.map((item, index) => (
+                    <Link to="/" key={index} className="notificaiton-elements">
+                      <div className="notification-top">
+                        <div className="notification-dot"></div>
+                        <div className="notificaiton-title">{item.title}</div>
+                      </div>
+                      <p className="notification-description">
+                        {item.description}
+                      </p>
+                    </Link>
+                  ))}
 
                   <div className="notification-bottom">
                     <Link to="/" className="module-button">

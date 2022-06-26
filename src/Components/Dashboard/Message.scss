@@ -23,7 +23,7 @@
       margin-right: 20px;
       //   margin-bottom: 20px;
 
-      &.messages-blue {
+      &.answer {
         display: -webkit-box;
         display: -webkit-flex;
         display: -ms-flexbox;
@@ -35,6 +35,17 @@
         flex-direction: column;
         border-radius: 10px;
         background-color: rgba(0, 154, 194, 0.22);
+
+        .title {
+          text-align: right;
+        }
+
+        .notification-top {
+          flex-direction: row-reverse;
+        }
+        .email-time {
+          color: #000 !important;
+        }
       }
       &.writer {
         border-radius: 10px;
@@ -75,12 +86,6 @@
             border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 0;
-
-            .email-time {
-              &.special {
-                color: #000;
-              }
-            }
 
             .title {
               margin-top: -1px;

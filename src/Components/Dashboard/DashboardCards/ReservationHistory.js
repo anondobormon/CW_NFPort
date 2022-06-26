@@ -25,12 +25,8 @@ export default function ReservationHistory({ reservationData }) {
 
               {dropdown && (
                 <div className="filter-dropdown-3 w-dropdown-list">
-                  <a href="#" className="filter-option ">
-                    Demain
-                  </a>
-                  <a href="#" className="filter-option ">
-                    Dans 2 jours
-                  </a>
+                  <div className="filter-option ">Demain</div>
+                  <div className="filter-option ">Dans 2 jours</div>
                 </div>
               )}
             </div>

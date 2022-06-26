@@ -2,6 +2,49 @@ import { Link } from "react-router-dom";
 import CopyWrite from "../CommonPage/CopyWrite/CopyWrite";
 import "./Message.scss";
 
+const messageFakeData = [
+  {
+    name: "Olivier Giroud",
+    title: "  Bonjour",
+    description:
+      "J'aurais souhaité connaître le prix pour 5 nuits dans votre port.",
+    greetings: "Cordialement",
+    sender: "Olivier",
+    time: "14h45",
+    status: "writer",
+  },
+  {
+    name: "Olivier Giroud",
+    title: "  Bonjour",
+    description:
+      "J'aurais souhaité connaître le prix pour 5 nuits dans votre port.",
+    greetings: "Cordialement",
+    sender: "Olivier",
+    time: "14h45",
+    status: "answer",
+  },
+  {
+    name: "Olivier Giroud",
+    title: "  Bonjour",
+    description:
+      "J'aurais souhaité connaître le prix pour 5 nuits dans votre port.",
+    greetings: "Cordialement",
+    sender: "Olivier",
+    time: "14h45",
+    status: "writer",
+  },
+  {
+    name: "Olivier Giroud",
+    title: "  Bonjour",
+    description:
+      "J'aurais souhaité connaître le prix pour 5 nuits dans votre port.",
+    greetings: "Cordialement",
+    sender: "Olivier",
+    time: "14h45",
+    status: "answer",
+  },
+];
+
 export default function Message() {
   return (
     <div className="message">
@@ -15,96 +58,38 @@ export default function Message() {
 
         <div className="dashboard-page-contents">
           <div className="module">
-            <div className="module-main writer">
-              <div className="email-section question">
-                <div className="top-message">
-                  <div className="image cover"></div>
-                  <h3 className="module-heading">Olivier Giroud</h3>
-                </div>
-
-                <div className="module-main special">
-                  <Link
-                    to="/email-details"
-                    className="email-element simple w-inline-block"
-                  >
-                    <div id="sender-message" className="notification-top">
-                      <div className="title">
-                        Bonjour,
-                        <br />
-                        J'aurais souhaité connaître le prix pour 5 nuits dans
-                        votre port.
-                        <br />
-                        Mon voilier fait 9m50 de long et xm de profondeur
-                        <br />
-                        <br />
-                        Cordialement,
-                        <br />
-                        <br />
-                        Olivier
-                      </div>
-                      <div className="email-time">14h45</div>
+            {messageFakeData.map((item, index) => (
+              <div key={index} className={`module-main ${item.status}`}>
+                <div className="email-section question">
+                  {item.status === "writer" && (
+                    <div className="top-message">
+                      <div className="image cover"></div>
+                      <h3 className="module-heading">Olivier Giroud</h3>
+                      {item.name}
                     </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className="module-main messages-blue">
-              <div className="email-section">
-                <div className="module-main">
-                  <div>
+                  )}
+
+                  <div className="module-main">
                     <Link to="/email-details" className="email-element">
-                      <div className="notification-top spacial">
-                        <div className="email-time special">14h45</div>
-                        <div className="title answer">
-                          Bonjour Olivier,
+                      <div id="sender-message" className="notification-top">
+                        <div className="title">
+                          {item.title}
                           <br />
-                          Merci pour votre intérêt.
-                          <br />
-                          Les nuits sont a x€ sur cette période. Souhaitez-vous
-                          réserver <br />
-                          <br />
-                          ‍Cordialement,
+                          {item.description}
                           <br />
                           <br />
-                          Jérome, Port de Marseille
+                          {item.greetings},
+                          <br />
+                          <br />
+                          {item.sender}
                         </div>
+                        <div className="email-time">{item.time}</div>
                       </div>
                     </Link>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="module-main writer">
-              <div className="email-section question">
-                <div className="top-message">
-                  <div className="image cover"></div>
-                  <h3 className="module-heading">Olivier Giroud</h3>
-                </div>
-
-                <div className="module-main special">
-                  <Link to="/email-details" className="email-element">
-                    <div id="sender-message" className="notification-top">
-                      <div className="title">
-                        Bonjour,
-                        <br />
-                        <br />
-                        J'aurais souhaité connaître le prix pour 5 nuits dans
-                        votre port.
-                        <br />
-                        Mon voilier fait 9m50 de long et xm de profondeur
-                        <br />
-                        <br />
-                        Cordialement,
-                        <br />
-                        <br />
-                        Olivier
-                      </div>
-                      <div className="email-time">14h45</div>
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
 
